@@ -41,7 +41,7 @@ const meses = [
         s = document.getElementById('segundos').innerHTML = segundos
 
         if (hora == 12 || hora == 18) {
-            abrirCerrar.innerHTML = "Es hora de cerrar"
+            abrirCerrar.innerHTML = "Ya es hora de cerrar"
         }
 
         mes.innerHTML = meses[reloj.getMonth()] + "-"

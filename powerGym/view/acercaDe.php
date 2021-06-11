@@ -1,4 +1,4 @@
-<?php include_once('includes/header.php') ?>
+<?php include_once('../includes/header.php') ?>
 
 
 <div class="principal">
@@ -12,22 +12,22 @@
 
         <ul>
             <li><a href="principal.php">PRINCIPAL</a></li>
-            <li><a href="registrarUsuario.php" class="active">REGISTRAR USUARIO</a></li>
+            <li><a href="registrarUsuario.php">REGISTRAR USUARIO</a></li>
             <li><a href="calendarioActividades.php">CALENDARIO ACTIVIDADES</a></li>
             <li><a href="estadisticas.php">ESTADISTICAS</a></li>
             <li><a href="sociosActivos.php">SOCIOS ACTIVOS</a></li>
-            <li><a href="acercaDe.php">ACERCA DE</a></li>
+            <li><a href="acercaDe.php" class="active">ACERCA DE</a></li>
         </ul>
     </div>
 
     <div class="derecha">
         
         <div class="cabecera">
-            <h1>Registrar Usuario</h1>
+            <h1>Acerca De</h1>
             <div class="ralla"></div>
         </div>
 
-        <div class="container-contenido container-contenido-registrarUsuario">
+        <div class="container-contenido container-contenido-acercaDe">
             <!-- CONTENIDO EDITABLE -->
         </div>
             
@@ -35,4 +35,4 @@
     
 </div>
 
-<?php include_once('includes/footer.php') ?>
+<?php include_once('../includes/footer.php') ?>

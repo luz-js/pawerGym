@@ -1,4 +1,4 @@
-<?php include_once('includes/header.php') ?>
+<?php include_once('../includes/header.php') ?>
 
 
 <div class="principal">
@@ -11,28 +11,41 @@
         </div>
 
         <ul>
-            <li><a href="principal.php">PRINCIPAL</a></li>
+            <li><a href="principal.php"class="active">PRINCIPAL</a></li>
             <li><a href="registrarUsuario.php">REGISTRAR USUARIO</a></li>
             <li><a href="calendarioActividades.php">CALENDARIO ACTIVIDADES</a></li>
             <li><a href="estadisticas.php">ESTADISTICAS</a></li>
             <li><a href="sociosActivos.php">SOCIOS ACTIVOS</a></li>
-            <li><a href="acercaDe.php" class="active">ACERCA DE</a></li>
+            <li><a href="acercaDe.php">ACERCA DE</a></li>
         </ul>
     </div>
 
     <div class="derecha">
-        
+
         <div class="cabecera">
-            <h1>Acerca De</h1>
+            <h1>Power Gym's Virtual Service</h1>
             <div class="ralla"></div>
         </div>
 
-        <div class="container-contenido container-contenido-acercaDe">
-            <!-- CONTENIDO EDITABLE -->
+        <div class="container-contenido">
+
+            <div class="reloj">
+                <h2 id="hora"></h2>
+                <h2 id="minutos"></h2>
+                <h2 id="segundos"></h2>
+            </div>
+
+            <div class="fecha">
+                <h1 id="mes"></h1>
+                <h1 id="dia"></h1>
+            </div>
+
+            <h1 id="abrirCerrar"></h1>
+
         </div>
-            
+
     </div>
     
 </div>
 
-<?php include_once('includes/footer.php') ?>
+<?php include_once('../includes/footer.php') ?>

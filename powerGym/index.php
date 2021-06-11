@@ -1,5 +1,11 @@
 <?php include_once('includes/header.php');?>
 
-    <!-- aqui va el cuerpo principal -->
+    <div>
+        <form action="principal.php" method="POST">
+            <input type="text" name="user" id="user">
+            <input type="text" name="pass" id="pass">
+            <input type="submit" value="INGRESAR">
+        </form>
+    </div>
 
 <?php include_once('includes/header.php');?>

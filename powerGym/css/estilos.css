@@ -5,6 +5,169 @@
 }
 
 :root{
-
+    --principal: #001D3D;
+    --secundario: #000814;
+    --amarillo: #FFC300;
+    --gris: #E9ECEF; 
 }
 
+h1, h2, a{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.principal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--principal);
+}
+
+.admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-menu{
+    width: 8vw;
+    height: 16vh;
+    background-image: url('../img/manager1.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 100px;
+    margin-bottom: 2vh;
+}
+
+.admin h2{
+    text-align: center;
+    font-size: 2vw;
+    padding-bottom: 6vh;
+    color: var(--gris);
+    border-bottom: var(--amarillo) 2px solid;
+}
+
+.menu ul{
+    margin-top: 4vh;
+}
+
+.menu ul li{
+    margin-bottom: 3vh;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu ul li a{
+    font-weight:500;
+    color: var(--gris);
+    text-decoration: none;
+    padding: 2vh 0vw 2vh 1vw;
+    width: 18vw;
+    border-radius: 30px;
+}
+
+.menu a.active{
+    background-color: var(--gris);
+    color: var(--secundario);
+}
+
+.icono{
+    width: 3.5vw;
+    height: 3.5vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.derecha{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera{
+    width: 100%;
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--principal);
+    
+}
+
+.cabecera h1{
+    font-size: 3vw;
+    color: var(--gris);
+    margin-bottom: 1vh;
+}
+
+.ralla{
+    width: 50%;
+    height: 0.3vh;
+    background-color: var(--amarillo);
+}
+
+.container-contenido{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../img/gym.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.reloj{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.reloj h2{
+    font-size: 13vw;
+    margin-right: 0.5vw;
+    margin-top: 15vh;
+    color: var(--gris);
+}
+
+.fecha{
+    display: flex;
+    flex-direction: row;
+}
+
+.fecha h1{
+    font-size: 5vw;
+    color: var(--gris);
+}
+
+#abrirCerrar{
+    font-size: 3.7vw;
+    color: var(--amarillo); 
+}
+
+#myChart{
+    background-color: rgba(255, 255, 255, 0.99);
+    width: 65vw;
+    margin: auto;
+    border-radius: 5px;
+}
+
+iframe{
+    width: 50vw;
+    height: 80vh;
+    margin: auto;
+}

@@ -1,11 +1,10 @@
-<?php include_once('includes/header.php');?>
+<?php 
 
-    <div>
-        <form action="principal.php" method="POST">
-            <input type="text" name="user" id="user">
-            <input type="text" name="pass" id="pass">
-            <input type="submit" value="INGRESAR">
-        </form>
-    </div>
+session_start();
+if (isset($_SESSION['usuario'])) {
+    header('Location: view/principal.php');
+}else {
+    header('Location: sesion.php');
+}
 
-<?php include_once('includes/header.php');?>
+?>

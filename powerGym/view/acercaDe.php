@@ -13,7 +13,7 @@
         <ul>
             <li><a href="principal.php">PRINCIPAL</a></li>
             <li><a href="registrarUsuario.php">REGISTRAR USUARIO</a></li>
-            <li><a href="calendarioActividades.php">CALENDARIO ACTIVIDADES</a></li>
+            <li><a href="../calendar.php">CALENDARIO ACTIVIDADES</a></li>
             <li><a href="estadisticas.php">ESTADISTICAS</a></li>
             <li><a href="sociosActivos.php">SOCIOS ACTIVOS</a></li>
             <li><a href="acercaDe.php" class="active">ACERCA DE</a></li>

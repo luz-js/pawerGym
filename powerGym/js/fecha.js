@@ -40,7 +40,7 @@ const meses = [
         m = document.getElementById('minutos').innerHTML = minutos + ":"
         s = document.getElementById('segundos').innerHTML = segundos
 
-        if (hora == 12 || hora == 18) {
+        if (hora == 12 || hora == 13) {
             abrirCerrar.innerHTML = "Ya es hora de cerrar"
         }
 

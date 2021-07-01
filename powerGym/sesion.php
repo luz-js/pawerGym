@@ -4,9 +4,8 @@ if (isset($_SESSION['usuario'])) {
     header('Location: index.php');
   }
 
-try {
-  $conexion = new PDO('mysql:host=localhost; dbname=powergym', 'root', '');
-  $statement = $conexion->prepare('SELECT * FROM admin');
+  require_once('bdd.php');
+  $statement = $bdd->prepare('SELECT * FROM admin');
   $statement->execute();
 
   $user = '';
@@ -16,14 +15,11 @@ try {
     $user = $value['user'];
     $password = $value['pass'];
   }
-
-} catch (PDOException $e) {
-  echo "error: " . $e;
-}
   
 
   $error = '';
   $errorUser = '';
+  
     if (isset($_POST['nombre']) && isset($_POST['pass'])) {
      $nombre =  $_POST['nombre'];
      $pass = $_POST['pass'];

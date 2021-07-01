@@ -1,5 +1,46 @@
-<?php include_once('../includes/header.php') ?>
 
+<?php 
+
+  /*$statement = $bdd->prepare('SELECT * FROM usuarios');
+  $statement->execute();
+
+  foreach ($statement as $key => $value) {
+    echo $nombre = $value['nombre'];
+    echo $apellido = $value['apellido'];
+    echo $telefono = $value['telefono'];
+    echo $edad = $value['edad'];
+    echo $sexo = $value['sexo'];
+  }*/
+
+
+  $error = '';
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $telefono = $_POST['telefono'];
+        $edad = $_POST['edad'];
+        $sexo = $_POST['sexo'];
+
+        if (empty($nombre) || empty($apellido) || empty($telefono) || empty($edad) || empty($sexo)) {
+            $error .= "Por favor rellenar los campos";
+        }
+
+        require_once('../bdd.php');
+
+        $sql = "INSERT INTO usuarios (idusuarios, nombre, apellido, telefono, edad, sexo) VALUES ('null', '$nombre', '$apellido', '$telefono', '$edad', '$sexo')";
+
+        $statement = $bdd->prepare($sql);
+        $statement->execute();
+
+        $error .= "Usuario ingresado con éxito";
+
+    }
+
+?>
+
+<?php include_once('../includes/header.php') ?>
 
 <div class="principal">
 
@@ -22,6 +63,7 @@
 
     <div class="derecha">
         
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <div class="cabecera">
             <h1>Registrar Usuario</h1>
             <div class="ralla"></div>
@@ -29,23 +71,27 @@
 
         <div class="container-contenido container-contenido-registrarUsuario">
             <section class="formulario">
-                <h4>Formulario Registro</h4>
-                <input class="controls" type="fname" name="Nombre" id="Nombre" placeholder="Nombre" required= "">
-                <input class= "controls" type="lname" name="Apellido" id="Apellido" placeholder="Apellido" required="">
-                <input class= "controls" type="email" name="Correo" id="Correo" placeholder="E-mail" required="">
+                <?php if (!empty($error)) :?>
+                    <div class="alert alert-warning" role="alert">
+                        <?php echo $error . '</ br>'?>
+                    </div>
+                <?php endif?>
 
-                <input class= "controls" type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required ="">
-            
-                <input class= "controls"type="number" placeholder="Edad" value="edad" id="edad">
-                <div class="checkbox">
-                    <input type="radio" name="Gender" value= "Hombre" id= "Hombre">Hombre<label for="Hombre"></label>
-                    <input type="radio" name="Gender" value= "Mujer" id= "Mujer">Mujer <label for="Mujer"></label>
-                </div>
-                <p>Está de acuerdo con <a href="#">Terminos y condiciones</a> </p>
-                <input class="buttonsss" type="submit" value="Registrar">
+                    <h4>Formulario Registro</h4>
+                    <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre" required="">
+                    <input class="controls" type="text" name="apellido" id="apellido" placeholder="apellido" required="">
+                    <input class="controls" type="number" name="telefono" id="telefono" placeholder="Telefono" required="">
+                
+                    <input class="controls" type="number" name="edad" id="edad" placeholder="Edad" required="">
+                    <div class="checkbox">
+                        <input type="radio" name="sexo" value= "Hombre" id= "Hombre">Hombre<label for="Hombre" required=""></label>
+                        <input type="radio" name="sexo" value= "Mujer" id= "Mujer">Mujer <label for="Mujer" required=""></label>
+                    </div>
+                    <p>Está de acuerdo con <a href="#">Terminos y condiciones</a> </p>
+                    <input class="buttonsss" type="submit" value="Registrar">
             </section>
-        </div>
-            
+        </div>  
+        </form> 
     </div>
     
 </div>

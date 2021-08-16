@@ -1,0 +1,120 @@
+include_once('../bdd.php');
+
+    $statement = $bdd->prepare('SELECT * FROM usuarios');
+    $statement->execute();
+
+?>
+
+<div class="principal">
+
+    <div class="menu">
+
+        <div class="admin">
+            <div class="img-menu"></div>
+            <h2>Administrador</h2>
+        </div>
+
+        <ul>
+            <li><a href="principal.php">PRINCIPAL</a></li>
+            <li><a href="registrarUsuario.php">REGISTRAR USUARIO</a></li>
+            <li><a href="../calendar.php">CALENDARIO ACTIVIDADES</a></li>
+            <li><a href="estadisticas.php">ESTADISTICAS</a></li>
+            <li><a href="sociosActivos.php" class="active">SOCIOS ACTIVOS</a></li>
+            <li><a href="acercaDe.php">ACERCA DE</a></li>
+        </ul>
+    </div>
+
+    <div class="derecha">
+        
+        <div class="cabecera">
+            <h1>Socios Activos</h1>
+            <div class="ralla"></div>
+        </div>
+
+        <div class="container-contenido container-contenido-sociosActivos">
+        <?php if (!empty($error)) :?>
+                    <div class="alert alert-warning" role="alert">
+                        <?php echo $error . '</ br>'?>
+                    </div>
+                <?php endif?>
+            <table class="table" id="table">
+                <thead bgcolor="#003049">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Acción</th>
+                </tr>
+                </thead>
+                <tbody class="table-light">
+
+                   <?php  $cont = 0; foreach ($statement as $key => $value) :?>
+                        
+                        <th scope="row"><?= $cont += 1?></th>
+                            <td><?= $value['nombre'] ?></td>
+                            <td><?= $value['apellido'] ?></td>
+                            <td><?= $value['telefono'] ?></td>
+                            <td><?= $value['edad'] ?></td>
+                            <td><?= $value['sexo'] ?></td>
+                            <td>
+                                <div>
+                                    <button type="button" class="btn btn-primary"><a href="edit.php?id=<?= $value["idusuarios"]?>" class="a">Edit</a></button>
+                                    <a href="delete.php?id=<?php echo $value['idusuarios'] ?>" class="btn btn-danger link_delete">Delete</a>
+                                </div>
+                            
+                            </td> 
+                        </tr>
+                    <?php endforeach ?>
+                
+                </tbody>
+            </table>
+        </div>
+            
+    </div>
+    
+</div>
+
+<style>
+    table{
+        border: none;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    thead{
+        color: #fff;
+    }
+    .table{
+        width: 80%;
+        margin-top: 5vw;
+    }
+
+    .a{
+       text-decoration: none;
+       color: white; 
+    }
+
+    .a:hover{
+        color: white;
+    }
+</style>
+
+<script>
+
+    function confirmacion(e) {
+        if (confirm("Desea eliminar este socio activo?")) {
+            return true;
+        }else{
+            e.preventDefault();
+        }
+    }
+
+    let linkDelete = document.querySelectorAll(".link_delete");
+
+    for (let i = 0; i < linkDelete.length; i++) {
+        linkDelete[i].addEventListener('click', confirmacion)
+    }
+
+</script>

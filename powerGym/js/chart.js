@@ -1,3 +1,6 @@
+
+
+
 var ctx = document.getElementById('myChart').getContext('2d')
 var myCharts =  new Chart(ctx, {
     type: "bar",

@@ -57,7 +57,6 @@
             <li><a href="../calendar.php">CALENDARIO ACTIVIDADES</a></li>
             <li><a href="estadisticas.php">ESTADISTICAS</a></li>
             <li><a href="sociosActivos.php">SOCIOS ACTIVOS</a></li>
-            <li><a href="acercaDe.php">ACERCA DE</a></li>
         </ul>
     </div>
 
